@@ -28,9 +28,7 @@ module.exports.workoutDetail = (req, res) => {
                     });
                }
 
-               return res.status(200).send({
-                    workouts: result,
-               });
+               return res.status(200).send(result);
           })
           .catch((err) => errorHandler(err, req, res));
 };
