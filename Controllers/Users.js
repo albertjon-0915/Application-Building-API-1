@@ -68,7 +68,7 @@ module.exports.Login = (req, res) => {
 };
 
 module.exports.getUserDetail = (req, res) => {
-     User.findOne({ _id: req.user.id })
+     User.findById(req.user.id )
           .then((result) => {
                console.log(result);
 
