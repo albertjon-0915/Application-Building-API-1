@@ -18,6 +18,23 @@ module.exports.getMyWorkouts = (req, res) => {
           .catch((err) => errorHandler(err, req, res));
 };
 
+module.exports.workoutDetail = (req, res) => {
+     Workouts.findOne({_id: req.params.workoutId})
+          .then((result) => {
+               console.log(result);
+               if (!result) {
+                    return res.status(404).send({
+                         message: "Failed to get user workout",
+                    });
+               }
+
+               return res.status(200).send({
+                    workouts: result,
+               });
+          })
+          .catch((err) => errorHandler(err, req, res));
+};
+
 module.exports.addWorkout = (req, res) => {
      const { name, duration } = req.body;
      const { id } = req.user;
