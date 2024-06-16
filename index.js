@@ -10,7 +10,7 @@ const workoutRoutes = require("./Routes/workoutRoutes.js");
 const app = express();
 
 const corsOptions = {
-     origin: ["https://localhost:4000"],
+     origin: ["https://localhost:4000", "https://application-building-api-1.onrender.com"],
      credentials: true,
      optionsuccessStatus: 200,
 };
